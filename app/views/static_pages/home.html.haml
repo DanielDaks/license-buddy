@@ -1,0 +1,50 @@
+.container{:id => "header-bg"}
+  /navbar
+  .navbar
+    .navbar-inner
+      %a.brand.pull-right{:href => "#"}
+        .logo
+          =image_tag "logo.png"
+      %ul.nav.pull-right{:id => "nav-links"}
+        %li
+          %a{:href => ""} What we do
+        %li
+          %a{:href => "/#portfolio"} Who we cover
+        %li
+          %a{:href => "/#who_we_are"} Who we are
+  #call-to-action
+    .row
+      .span5{:id => "demo_video"}
+        <iframe width="500" height="280" src="http://www.youtube.com/embed/OFb0NaeRmdg?rel=0" frameborder="0" allowfullscreen></iframe>
+      .span7
+        %center
+          %h1 Call to action slogan here.
+          %h3small We track your CPE requirements so you don't have to. <br><br>
+          %a.btn.btn-primary.btn-large{:href => "#contact", :role => "button", :class => "btn", :"data-toggle" => "modal"} Register Now
+    / %center
+    /   %img(src="../img/arsenal-dot-dot-dot.png"){:id => "dot-dot-dot"}
+  .row{:id => "press"}
+    .span3
+      .well
+        %center
+          =image_tag "check_mark.png", :id => "check"
+          =image_tag "cpa.jpg"
+          %h5{:id => "segments_text"} CPAs
+    .span3
+      .well
+        %center
+          =image_tag "check_mark.png", :id => "check"
+          =image_tag "nurse.jpg"
+          %h5{:id => "segments_text"} RNs & CphTs
+    .span3
+      .well
+        %center
+          =image_tag "check_mark.png", :id => "check"
+          =image_tag "realestate.png"
+          %h5{:id => "segments_text"} Realestate Agents
+    .span3
+      .well
+        %center
+          =image_tag "check_mark.png", :id => "check"
+          =image_tag "lawyer.jpg"
+          %h5{:id => "segments_text"} Lawyers

@@ -1,0 +1,92 @@
+#intro {background-image:url('../img/intro-bg.png');
+background-repeat: repeat;}
+#value {
+    background-image:url('../img/brick_patch.jpg');
+}
+
+#portfolio {
+    background-image: url('../img/nonwinding_brick_patch.jpg');
+}
+#nav-links{
+    padding-top: 25px;
+    font-size: 18px;
+}
+#top-purple-line{
+    background-color: #73731d;
+    margin: 0px !important;
+    height: 7px;
+    border: none !important;
+}
+
+#bottom-purple-line{
+    background-color: #73731d;
+    margin: 0px !important;
+    height: 50px;
+    border: none !important;
+}
+h4 small {
+  font-size: 10px;
+}
+
+#demo_video{
+    top: 15px;
+    position: relative;
+}
+
+/*#value {background-image:url('../img/value-bg.jpg');
+background-repeat: repeat;}*/
+
+#check{
+    left: 4px;
+    position: relative;
+    bottom: 10px;
+}
+#segments_text{
+    padding-top: 2px;
+}
+#modalText{
+    width: 500px;
+    height: 100px;
+}
+#press{
+    padding-top: 25px;
+}
+
+.logo{
+    padding-top: 30px;
+    margin-left: -22px;
+}
+
+#myModalLabel{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 5px;
+    font-color: #3c3251 !important;
+}
+#footertext {
+    margin-top: -40px;
+    margin-left: 50px;
+    color: white;
+    font-weight: normal;
+    font-size: 13px;
+}
+.mobileweb{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.img40{
+    margin-top: 40px;
+}
+
+.img20{
+    margin-top: 20px;
+}
+
+#dot-dot-dot{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#value-header{
+    margin-top: 40px;
+}
