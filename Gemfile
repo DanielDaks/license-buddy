@@ -7,6 +7,9 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
+gem 'haml-rails', '>= 0.3.4'
+gem 'pg', '0.12.2'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,11 +19,7 @@ group :assets do
   gem 'uglifier', '1.2.3'
 end
 
-gem 'jquery-rails', '2.0.2'
 
-group :development do 
-gem 'haml-rails', '>= 0.3.4'
-end
 
 group :test do
   gem 'capybara', '1.1.2'
@@ -32,13 +31,8 @@ group :test do
   # gem 'growl', '1.0.3'
 end
 
-group :production do
-  gem 'pg', '0.12.2'
-  gem 'thin'
-end
 
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
   # gem 'guard-rspec', '1.2.1'
   # gem 'guard-spork', '1.2.0'  
