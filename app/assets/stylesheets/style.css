@@ -56,6 +56,9 @@ background-repeat: repeat;}*/
     padding-top: 25px;
 }
 
+#top-bar{
+    padding-bottom: 25px;
+}
 .logo{
     padding-top: 30px;
     margin-left: -22px;
