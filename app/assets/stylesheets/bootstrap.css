@@ -4632,7 +4632,7 @@ a.thumbnail:hover {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000000;
+/*  background-color: #024c68;*/
 }
 .modal-backdrop.fade {
   opacity: 0;

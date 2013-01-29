@@ -1,0 +1,42 @@
+.container{:id => "header-bg"}
+  /navbar
+  .navbar
+    .navbar-inner
+      %a.brand.pull-right{:href => "#"}
+        .logo
+          =image_tag "logo.png"
+      %ul.nav.pull-right{:id => "nav-links"}
+        %li
+          %a{:href => "/static_pages/about"} What we do
+        %li
+          %a{:href => "/#portfolio"} Who we cover
+        %li
+          %a{:href => "/#who_we_are"} Who we are
+  %center
+    %h1 What we do
+  .row
+    .span4
+      .well{:id => "about"}
+        %center
+          %h4 Know Your Requirements 
+          =image_tag "clipboard.jpg", :id => "about_clip"
+          %p{:id => "about"} Quick and easy access to state license continuing education requirements
+    .span4
+      .well{:id => "about"}
+        %center
+          %h4 Track Your Credits
+          =image_tag "shield.jpg"
+          %p{:id => "about"} Tools for CE tracking and backing-up your CE hours to stay compliant
+    .span4
+      .well{:id => "about"}
+        %center
+          %h4 Find Courses
+          =image_tag "lense.jpg", :id => "about_lense"
+          %p{:id => "about"} Resources to help you identify your next continuing education classes
+  .row
+    .span2
+    .span13
+      %center
+        %p
+          License Buddy is a free tool for licensed professionals to track their continuing education credits. No more hunting down courses and keeping track of completion certificates, License Buddy brings it all together.We are the one-stop shop for all your continuing education needs.
+<!-- Find me in app/views/static_pages/about.html.erb -->

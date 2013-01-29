@@ -1,4 +1,4 @@
-.container{:id => "header-bg"}
+.container{:id => "page"}
   /navbar
   .navbar
     .navbar-inner
@@ -7,7 +7,7 @@
           =image_tag "logo.png"
       %ul.nav.pull-right{:id => "nav-links"}
         %li
-          %a{:href => ""} What we do
+          %a{:href => "/static_pages/about"} What we do
         %li
           %a{:href => "/#portfolio"} Who we cover
         %li
@@ -15,12 +15,12 @@
   #call-to-action
     .row{:id => "top-bar"}
       .span5{:id => "demo_video"}
-        <iframe width="500" height="280" src="http://www.youtube.com/watch?v=QIzzBEKvCsk&feature=youtu.be" frameborder="0" allowfullscreen></iframe>
+        <iframe width="500" height="315" src="http://www.youtube.com/embed/QIzzBEKvCsk" frameborder="0" allowfullscreen></iframe>
       .span7
         %center
           %h1 Continuing education made easy.
           %h3small We track your CPE requirements so you don't have to. <br><br>
-          %a.btn.btn-primary.btn-large{:href => "#contact", :role => "button", :class => "btn", :"data-toggle" => "modal"} Register Now
+          %a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Register Now
     / %center
     /   %img(src="../img/arsenal-dot-dot-dot.png"){:id => "dot-dot-dot"}
   .row{:id => "press"}
@@ -48,3 +48,82 @@
           =image_tag "check_mark.png", :id => "check"
           =image_tag "lawyer.jpg"
           %h5{:id => "segments_text"} Lawyers
+/ Modal
+#emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
+  %center
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3#myModalLabel Step 1
+    .modal-body
+      .header.double
+        %h2{:name => "step1"} Your Email Address
+      %fieldset
+        %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
+          .field.subscriptions_subscribe_with_places_email.text
+            %label.medium{:for => "subscriptions_subscribe_with_places_email"}
+            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text"}
+        .button
+          %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
+    .modal-footer
+      %p.notice
+        By clicking Continue, I agree to the
+        %a{"data-bhw" => "SubscriptionTermsOfService", "data-bhw-path" => "SubscriptionEmail|SubscriptionTermsOfService", :href => "/terms", :target => "_blank"} Terms of Service
+        and
+        = succeed "." do
+          %a{"data-bhw" => "SubscriptionPrivacyStatement", "data-bhw-path" => "SubscriptionEmail|SubscriptionPrivacyStatement", :href => "/privacy", :target => "_blank"} Privacy Statement
+      %h3{:id => "modal_text"} 
+      Already have an account?
+      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "https://www.groupon.com/login"} Sign In
+
+
+#licenseModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
+  %center
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3#myModalLabel Step 2
+    .modal-body
+      .header.double
+        %h2{:name => "step1"} Your License
+      %fieldset
+        %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
+          .field.subscriptions_subscribe_with_places_email.text
+            %label.medium{:for => "subscriptions_subscribe_with_places_email"}
+            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text"}
+        .button
+          %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
+    .modal-footer
+      %h3{:id => "modal_text"} 
+      Already have an account?
+      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "https://www.groupon.com/login"} Sign In
+  /   %button.btn{:id => "close"} Close
+  /   / "aria-hidden" => "true", "data-dismiss" => "modal",
+  /   %button.btn.btn-primary Save changes
+
+/ #windowTitleDialog.modal.hide.fade.in{"aria-hidden" => "true", "aria-labelledby" => "windowTitleLabel", :role => "dialog", :style => "display: block;", :tabindex => "-1", "data-keyboard" => "true",}
+/   .modal-header
+/     %a.close{"data-dismiss" => "modal", :class => "close", "data-target" => "#windowTitleDialog"} ×
+/     #progress_indicator{"data-bhw" => "progress_indicator", "data-bhw-path" => "P13n Wiz|progress_indicator"}
+/     .stepped_progress_bar.incomplete
+/     .step.completed_step.viewed
+/       %div
+/         %span.step_number 1
+/         .connector
+/       %span.step_name License
+/     .step.viewed
+/       %div
+/         %span.step_number 2
+/         .connector
+/       %span.step_name Location
+/     .step
+/       %div
+/         %span.step_number 3
+/       %span.step_name Contact
+/   .stepped_progress_bar.complete{:style => "clip: rect(0px 244px 40px 0px);"}
+/     .step
+/       %span.step_number 1
+/       .connector
+/     .step
+/       %span.step_number 2
+/       .connector
+/     .step
+/       %span.step_number 3

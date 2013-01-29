@@ -1,7 +1,17 @@
 LBuddy::Application.routes.draw do
+authenticated :user do
+  root :to => "static_pages#home"
+end
+root :to => "static_pages#home"
+devise_for :users
+resources :users
+
+  devise_for :users
+
   get "static_pages/home"
 
   get "static_pages/about"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +62,6 @@ LBuddy::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 

@@ -10,6 +10,8 @@ gem 'jquery-rails', '2.0.2'
 gem 'haml-rails', '>= 0.3.4'
 gem 'pg', '0.12.2'
 gem 'thin'
+gem "devise", ">= 2.1.0"
+gem "twitter-bootstrap-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.
