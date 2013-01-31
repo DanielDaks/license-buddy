@@ -1,17 +1,6 @@
-.container{:id => "page"}
+.container{:id => "header-bg"}
   /navbar
-  .navbar
-    .navbar-inner
-      %a.brand.pull-right{:href => "#"}
-        .logo
-          =image_tag "logo.png"
-      %ul.nav.pull-right{:id => "nav-links"}
-        %li
-          %a{:href => "/static_pages/about"} What we do
-        %li
-          %a{:href => "/#portfolio"} Who we cover
-        %li
-          %a{:href => "/#who_we_are"} Who we are
+  = render :partial => "/layouts/nav"
   #call-to-action
     .row{:id => "top-bar"}
       .span5{:id => "demo_video"}
@@ -61,16 +50,16 @@
         %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
           .field.subscriptions_subscribe_with_places_email.text
             %label.medium{:for => "subscriptions_subscribe_with_places_email"}
-            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text"}
+            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text",}
         .button
           %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
     .modal-footer
       %p.notice
         By clicking Continue, I agree to the
-        %a{"data-bhw" => "SubscriptionTermsOfService", "data-bhw-path" => "SubscriptionEmail|SubscriptionTermsOfService", :href => "/terms", :target => "_blank"} Terms of Service
+        %a{"data-bhw" => "SubscriptionTermsOfService", "data-bhw-path" => "SubscriptionEmail|SubscriptionTermsOfService", :href => "/static_pages/legal", :target => "_blank"} Terms of Service
         and
         = succeed "." do
-          %a{"data-bhw" => "SubscriptionPrivacyStatement", "data-bhw-path" => "SubscriptionEmail|SubscriptionPrivacyStatement", :href => "/privacy", :target => "_blank"} Privacy Statement
+          %a{"data-bhw" => "SubscriptionPrivacyStatement", "data-bhw-path" => "SubscriptionEmail|SubscriptionPrivacyStatement", :href => "/static_pages/legal", :target => "_blank"} Privacy Statement
       %h3{:id => "modal_text"} 
       Already have an account?
       %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "https://www.groupon.com/login"} Sign In
@@ -88,7 +77,7 @@
         %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
           .field.subscriptions_subscribe_with_places_email.text
             %label.medium{:for => "subscriptions_subscribe_with_places_email"}
-            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text"}
+            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "UserEmail", :size => "30", :type => "text", "input placeholder" => "e.g., CPA, RN, etc.", :id => "UserEmail",}
         .button
           %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
     .modal-footer

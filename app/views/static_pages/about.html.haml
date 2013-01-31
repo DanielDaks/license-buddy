@@ -1,17 +1,6 @@
 .container{:id => "header-bg"}
   /navbar
-  .navbar
-    .navbar-inner
-      %a.brand.pull-right{:href => "#"}
-        .logo
-          =image_tag "logo.png"
-      %ul.nav.pull-right{:id => "nav-links"}
-        %li
-          %a{:href => "/static_pages/about"} What we do
-        %li
-          %a{:href => "/#portfolio"} Who we cover
-        %li
-          %a{:href => "/#who_we_are"} Who we are
+  = render :partial => "/layouts/nav"
   %center
     %h1 What we do
   .row
@@ -38,5 +27,5 @@
     .span13
       %center
         %p
-          License Buddy is a free tool for licensed professionals to track their continuing education credits. No more hunting down courses and keeping track of completion certificates, License Buddy brings it all together.We are the one-stop shop for all your continuing education needs.
+          License Buddy is a free tool for licensed professionals to track their continuing education credits. No more hunting down courses and keeping track of completion certificates, License Buddy brings it all together. We are the one-stop shop for all your continuing education needs.
 <!-- Find me in app/views/static_pages/about.html.erb -->

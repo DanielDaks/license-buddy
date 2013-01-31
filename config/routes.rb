@@ -7,10 +7,10 @@ devise_for :users
 resources :users
 
   devise_for :users
-
   get "static_pages/home"
-
+  get "static_pages/legal"
   get "static_pages/about"
+  get "static_pages/whoweare"
 
 
   # The priority is based upon order of creation:
