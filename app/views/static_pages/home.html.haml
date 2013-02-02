@@ -43,6 +43,8 @@
     .modal-header
       %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
       %h3#myModalLabel Step 1
+      .progress.progress-striped.active
+        .bar{:style => "width: 25%;"}
     .modal-body
       .header.double
         %h2{:name => "step1"} Your Email Address
@@ -62,7 +64,7 @@
           %a{"data-bhw" => "SubscriptionPrivacyStatement", "data-bhw-path" => "SubscriptionEmail|SubscriptionPrivacyStatement", :href => "/static_pages/legal", :target => "_blank"} Privacy Statement
       %h3{:id => "modal_text"} 
       Already have an account?
-      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "https://www.groupon.com/login"} Sign In
+      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "/users/sign_in"} Sign In
 
 
 #licenseModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
@@ -70,6 +72,8 @@
     .modal-header
       %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
       %h3#myModalLabel Step 2
+      .progress.progress-striped.active
+        .bar{:style => "width: 50%;"}
     .modal-body
       .header.double
         %h2{:name => "step1"} Your License
@@ -83,7 +87,7 @@
     .modal-footer
       %h3{:id => "modal_text"} 
       Already have an account?
-      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "https://www.groupon.com/login"} Sign In
+      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "users/sign_in"} Sign In
   /   %button.btn{:id => "close"} Close
   /   / "aria-hidden" => "true", "data-dismiss" => "modal",
   /   %button.btn.btn-primary Save changes
