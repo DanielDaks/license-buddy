@@ -1,4 +1,12 @@
 LBuddy::Application.routes.draw do
+  get "users/index"
+
+  get "users/show"
+
+  get "users/new"
+
+  get "users/edit"
+
 authenticated :user do
   root :to => "static_pages#home"
 end
