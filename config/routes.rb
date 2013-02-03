@@ -1,4 +1,7 @@
 LBuddy::Application.routes.draw do
+  resources :klasses
+
+
   get "users/index"
 
   get "users/show"

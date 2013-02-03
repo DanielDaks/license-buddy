@@ -1,0 +1,25 @@
+%h1 Listing klasses
+
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Price
+    %th Credit
+    %th
+    %th
+    %th
+
+  - @klasses.each do |klass|
+    %tr
+      %td= klass.name
+      %td= klass.description
+      %td= klass.price
+      %td= klass.credit
+      %td= link_to 'Show', klass
+      %td= link_to 'Edit', edit_klass_path(klass)
+      %td= link_to 'Destroy', klass, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Klass', new_klass_path
