@@ -12,6 +12,7 @@ resources :users
   get "static_pages/about"
   get "static_pages/whoweare"
 
+devise_for :users, :controllers => {:sessions => 'sessions'}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

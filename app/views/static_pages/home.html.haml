@@ -49,12 +49,19 @@
       .header.double
         %h2{:name => "step1"} Your Email Address
       %fieldset
-        %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
-          .field.subscriptions_subscribe_with_places_email.text
-            %label.medium{:for => "subscriptions_subscribe_with_places_email"}
-            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text",}
-        .button
-          %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
+        %form
+        = label :user, :email, "Email"
+        = text_field :user, :email
+        = label :user, :password
+        = password_field :user, :password
+        %input{:type => "submit", :value => "Sign Up", :id => "emailContinue"}
+
+        / %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
+        /   .field.subscriptions_subscribe_with_places_email.text
+        /     %label.medium{:for => "subscriptions_subscribe_with_places_email"}
+        /     %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text",}
+        / .button
+        /   %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
     .modal-footer
       %p.notice
         By clicking Continue, I agree to the

@@ -7,11 +7,13 @@
   = stylesheet_link_tag    "application", :media => "all"
   = javascript_include_tag "application"
   = csrf_meta_tags
-  / %p.notice= notice
-  / %p.alert= alert
 %body
   %hr{:id => "top-purple-line"}
   .container{:id => "page_container"}
+    - if flash[:notice]
+      %p.notice.alert.alert-success= flash[:notice]
+    - if flash[:error]
+      %p.erroralert.alert-error= flash[:error]
     = yield
 %footer
   %hr{:id => "bottom-purple-line"}
