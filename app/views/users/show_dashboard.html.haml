@@ -3,7 +3,26 @@
 = @klass.id
 hey
 <br>
-- @users.each do |u|
-	= u.id
+%a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Register Now
 
-= render :partial => "klasses/form"
+
+#emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
+  %center
+    .modal-header
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+      %h3#myModalLabel Step 1
+      .progress.progress-striped.active
+        .bar{:style => "width: 25%;"}
+    .modal-body
+      = render :partial => "klasses/form"
+     
+    .modal-footer
+      / %p.notice
+      /   By clicking Continue, I agree to the
+      /   %a{"data-bhw" => "SubscriptionTermsOfService", "data-bhw-path" => "SubscriptionEmail|SubscriptionTermsOfService", :href => "/static_pages/legal", :target => "_blank"} Terms of Service
+      /   and
+      /   = succeed "." do
+      /     %a{"data-bhw" => "SubscriptionPrivacyStatement", "data-bhw-path" => "SubscriptionEmail|SubscriptionPrivacyStatement", :href => "/static_pages/legal", :target => "_blank"} Privacy Statement
+      / %h3{:id => "modal_text"} 
+      / Already have an account?
+      / %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "/users/sign_in"} Sign In

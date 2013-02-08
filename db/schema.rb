@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130203032624) do
+ActiveRecord::Schema.define(:version => 20130208024245) do
 
   create_table "klasses", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130203032624) do
     t.float    "credit"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "hours"
   end
 
   create_table "users", :force => true do |t|
