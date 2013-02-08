@@ -1,4 +1,16 @@
 class UsersController < ApplicationController
+
+  def show_dashboard
+    @id = params["id"]
+    @user = User.first
+    @klass = Klass.first
+    @users = User.all
+
+    respond_to do |format|
+      format.html 
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index
