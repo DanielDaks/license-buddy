@@ -29,4 +29,3 @@ end
       render :json=> user.errors, :status=>422
     end
   end
-end
