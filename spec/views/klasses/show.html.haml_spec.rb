@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "klasses/show" do
+describe "courses/show" do
   before(:each) do
-    @klass = assign(:klass, stub_model(Klass,
+    @course = assign(:course, stub_model(Course,
       :name => "Name",
       :description => "MyText",
       :price => 1.5,

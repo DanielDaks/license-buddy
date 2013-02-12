@@ -1,14 +1,27 @@
 = render :partial => 'layouts/nav'
-= @id
+/ = @id
 / = @user.id
-/ / = @klass.id
-/ - if @user.klasses.empty?
+/ / = @course.id
+/ - if @user.courses.empty?
 /   No Orders Found
-= current_user.id
-hey
+/ = current_user.id
+/ hey
 <br>
--@myKlasses.each do |k|
-  = k.name
+- @myCourses.each do |k|
+  %p
+    %b Name:
+    = k.name
+  %p
+    %b Description:
+    = k.description
+  %p
+    %b Price:
+    = k.price
+  %p
+    %b Credit:
+    = k.credit
+
+
 
 %a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Add Course
 
@@ -21,7 +34,7 @@ hey
       .progress.progress-striped.active
         .bar{:style => "width: 25%;"}
     .modal-body
-      = render :partial => "klasses/form"
+      = render :partial => "courses/form"
      
     .modal-footer
       / %p.notice

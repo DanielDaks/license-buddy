@@ -3,12 +3,19 @@ class UsersController < ApplicationController
   def show_dashboard
     @id = params["id"]
     @user = User.first
-    @klass = Klass.first
     @users = User.all
-    @me = current_user.id
-    @myKlasses = Klass.where("user_id = 5", params[:user_id])
+    @myCourses = Course.find_all_by_user_id(current_user.id)
+    # @usercourses.create(params[:course])
+    @course = Course.new(params[:course])
+
     respond_to do |format|
-      format.html 
+      if @course.save
+        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.json { render json: @course, status: :created, location: @course }
+      else
+        format.html 
+        format.json
+      end
     end
   end
 

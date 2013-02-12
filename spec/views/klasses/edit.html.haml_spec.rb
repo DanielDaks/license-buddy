@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "klasses/edit" do
+describe "courses/edit" do
   before(:each) do
-    @klass = assign(:klass, stub_model(Klass,
+    @course = assign(:course, stub_model(Course,
       :name => "MyString",
       :description => "MyText",
       :price => 1.5,
@@ -10,15 +10,15 @@ describe "klasses/edit" do
     ))
   end
 
-  it "renders the edit klass form" do
+  it "renders the edit course form" do
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "form", :action => klasses_path(@klass), :method => "post" do
-      assert_select "input#klass_name", :name => "klass[name]"
-      assert_select "textarea#klass_description", :name => "klass[description]"
-      assert_select "input#klass_price", :name => "klass[price]"
-      assert_select "input#klass_credit", :name => "klass[credit]"
+    assert_select "form", :action => courses_path(@course), :method => "post" do
+      assert_select "input#course_name", :name => "course[name]"
+      assert_select "textarea#course_description", :name => "course[description]"
+      assert_select "input#course_price", :name => "course[price]"
+      assert_select "input#course_credit", :name => "course[credit]"
     end
   end
 end

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @course.name
+%p
+  %b Description:
+  = @course.description
+%p
+  %b Price:
+  = @course.price
+%p
+  %b Credit:
+  = @course.credit
+
+= link_to 'Edit', edit_course_path(@course)
+\|
+= link_to 'Back', '/'

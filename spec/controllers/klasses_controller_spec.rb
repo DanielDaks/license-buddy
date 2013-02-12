@@ -18,10 +18,10 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe KlassesController do
+describe CoursesController do
 
   # This should return the minimal set of attributes required to create a valid
-  # Klass. As you add validations to Klass, be sure to
+  # Course. As you add validations to Course, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
     {}
@@ -29,74 +29,74 @@ describe KlassesController do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # KlassesController. Be sure to keep this updated too.
+  # CoursesController. Be sure to keep this updated too.
   def valid_session
     {}
   end
 
   describe "GET index" do
-    it "assigns all klasses as @klasses" do
-      klass = Klass.create! valid_attributes
+    it "assigns all courses as @courses" do
+      course = Course.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:klasses).should eq([klass])
+      assigns(:courses).should eq([course])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested klass as @klass" do
-      klass = Klass.create! valid_attributes
-      get :show, {:id => klass.to_param}, valid_session
-      assigns(:klass).should eq(klass)
+    it "assigns the requested course as @course" do
+      course = Course.create! valid_attributes
+      get :show, {:id => course.to_param}, valid_session
+      assigns(:course).should eq(course)
     end
   end
 
   describe "GET new" do
-    it "assigns a new klass as @klass" do
+    it "assigns a new course as @course" do
       get :new, {}, valid_session
-      assigns(:klass).should be_a_new(Klass)
+      assigns(:course).should be_a_new(Course)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested klass as @klass" do
-      klass = Klass.create! valid_attributes
-      get :edit, {:id => klass.to_param}, valid_session
-      assigns(:klass).should eq(klass)
+    it "assigns the requested course as @course" do
+      course = Course.create! valid_attributes
+      get :edit, {:id => course.to_param}, valid_session
+      assigns(:course).should eq(course)
     end
   end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Klass" do
+      it "creates a new Course" do
         expect {
-          post :create, {:klass => valid_attributes}, valid_session
-        }.to change(Klass, :count).by(1)
+          post :create, {:course => valid_attributes}, valid_session
+        }.to change(Course, :count).by(1)
       end
 
-      it "assigns a newly created klass as @klass" do
-        post :create, {:klass => valid_attributes}, valid_session
-        assigns(:klass).should be_a(Klass)
-        assigns(:klass).should be_persisted
+      it "assigns a newly created course as @course" do
+        post :create, {:course => valid_attributes}, valid_session
+        assigns(:course).should be_a(Course)
+        assigns(:course).should be_persisted
       end
 
-      it "redirects to the created klass" do
-        post :create, {:klass => valid_attributes}, valid_session
-        response.should redirect_to(Klass.last)
+      it "redirects to the created course" do
+        post :create, {:course => valid_attributes}, valid_session
+        response.should redirect_to(Course.last)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved klass as @klass" do
+      it "assigns a newly created but unsaved course as @course" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Klass.any_instance.stub(:save).and_return(false)
-        post :create, {:klass => {}}, valid_session
-        assigns(:klass).should be_a_new(Klass)
+        Course.any_instance.stub(:save).and_return(false)
+        post :create, {:course => {}}, valid_session
+        assigns(:course).should be_a_new(Course)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Klass.any_instance.stub(:save).and_return(false)
-        post :create, {:klass => {}}, valid_session
+        Course.any_instance.stub(:save).and_return(false)
+        post :create, {:course => {}}, valid_session
         response.should render_template("new")
       end
     end
@@ -104,60 +104,60 @@ describe KlassesController do
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested klass" do
-        klass = Klass.create! valid_attributes
-        # Assuming there are no other klasses in the database, this
-        # specifies that the Klass created on the previous line
+      it "updates the requested course" do
+        course = Course.create! valid_attributes
+        # Assuming there are no other courses in the database, this
+        # specifies that the Course created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Klass.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => klass.to_param, :klass => {'these' => 'params'}}, valid_session
+        Course.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+        put :update, {:id => course.to_param, :course => {'these' => 'params'}}, valid_session
       end
 
-      it "assigns the requested klass as @klass" do
-        klass = Klass.create! valid_attributes
-        put :update, {:id => klass.to_param, :klass => valid_attributes}, valid_session
-        assigns(:klass).should eq(klass)
+      it "assigns the requested course as @course" do
+        course = Course.create! valid_attributes
+        put :update, {:id => course.to_param, :course => valid_attributes}, valid_session
+        assigns(:course).should eq(course)
       end
 
-      it "redirects to the klass" do
-        klass = Klass.create! valid_attributes
-        put :update, {:id => klass.to_param, :klass => valid_attributes}, valid_session
-        response.should redirect_to(klass)
+      it "redirects to the course" do
+        course = Course.create! valid_attributes
+        put :update, {:id => course.to_param, :course => valid_attributes}, valid_session
+        response.should redirect_to(course)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the klass as @klass" do
-        klass = Klass.create! valid_attributes
+      it "assigns the course as @course" do
+        course = Course.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Klass.any_instance.stub(:save).and_return(false)
-        put :update, {:id => klass.to_param, :klass => {}}, valid_session
-        assigns(:klass).should eq(klass)
+        Course.any_instance.stub(:save).and_return(false)
+        put :update, {:id => course.to_param, :course => {}}, valid_session
+        assigns(:course).should eq(course)
       end
 
       it "re-renders the 'edit' template" do
-        klass = Klass.create! valid_attributes
+        course = Course.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Klass.any_instance.stub(:save).and_return(false)
-        put :update, {:id => klass.to_param, :klass => {}}, valid_session
+        Course.any_instance.stub(:save).and_return(false)
+        put :update, {:id => course.to_param, :course => {}}, valid_session
         response.should render_template("edit")
       end
     end
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested klass" do
-      klass = Klass.create! valid_attributes
+    it "destroys the requested course" do
+      course = Course.create! valid_attributes
       expect {
-        delete :destroy, {:id => klass.to_param}, valid_session
-      }.to change(Klass, :count).by(-1)
+        delete :destroy, {:id => course.to_param}, valid_session
+      }.to change(Course, :count).by(-1)
     end
 
-    it "redirects to the klasses list" do
-      klass = Klass.create! valid_attributes
-      delete :destroy, {:id => klass.to_param}, valid_session
-      response.should redirect_to(klasses_url)
+    it "redirects to the courses list" do
+      course = Course.create! valid_attributes
+      delete :destroy, {:id => course.to_param}, valid_session
+      response.should redirect_to(courses_url)
     end
   end
 
