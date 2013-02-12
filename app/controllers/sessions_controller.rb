@@ -17,7 +17,7 @@ class SessionsController < Devise::SessionsController
   end
 end
 
-  respond_to :json
+  # respond_to :json
   def create
  
     user = User.new(params[:user])
