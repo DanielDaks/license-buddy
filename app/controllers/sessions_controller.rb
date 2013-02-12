@@ -15,9 +15,9 @@ class SessionsController < Devise::SessionsController
   def failure
     return render:json => {:success => false, :errors => ["Login failed."]}
   end
-end
 
-  # respond_to :json
+
+  respond_to :json
   def create
  
     user = User.new(params[:user])
@@ -28,4 +28,4 @@ end
       warden.custom_failure!
       render :json=> user.errors, :status=>422
     end
-  end
+  
