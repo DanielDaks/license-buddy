@@ -13,7 +13,7 @@ LBuddy::Application.routes.draw do
   get "dashboard/:id", :to => "users#show_dashboard"
 
 authenticated :user do
-  root :to => "static_pages#home"
+  root :to => "users#show_dashboard"
 end
 root :to => "static_pages#home"
 devise_for :users

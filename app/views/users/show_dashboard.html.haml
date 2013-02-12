@@ -1,9 +1,16 @@
+= render :partial => 'layouts/nav'
 = @id
-= @user.id
-= @klass.id
+/ = @user.id
+/ / = @klass.id
+/ - if @user.klasses.empty?
+/   No Orders Found
+= current_user.id
 hey
 <br>
-%a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Register Now
+-@myKlasses.each do |k|
+  = k.name
+
+%a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Add Course
 
 
 #emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}

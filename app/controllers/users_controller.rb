@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     @user = User.first
     @klass = Klass.first
     @users = User.all
-
+    @me = current_user.id
+    @myKlasses = Klass.where("user_id = 5", params[:user_id])
     respond_to do |format|
       format.html 
     end
