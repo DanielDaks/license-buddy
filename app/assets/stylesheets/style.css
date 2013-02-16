@@ -108,7 +108,7 @@ background-repeat: repeat;}*/
 .modal-body{background: #f9f9f9;}
 #progress_indicator .step .connector{border-top:1px solid #ccc;display:inline-block;height:5px;width:125px;margin:0 10px}
 #progress_indicator{height:50px;margin:0 auto;position:relative;width:215px}
-#emailContinue{right}
+/*#emailContinue{right}*/
 
 #page_container{min-height: 600px;}
 #about{font-color: #818181; min-height: 90px;}
