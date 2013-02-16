@@ -28,4 +28,5 @@ class SessionsController < Devise::SessionsController
       warden.custom_failure!
       render :json=> user.errors, :status=>422
     end
+  end
 end
