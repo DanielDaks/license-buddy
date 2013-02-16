@@ -3,41 +3,46 @@
   = render :partial => "/layouts/nav"
   #call-to-action
     .row{:id => "top-bar"}
-      .span5{:id => "demo_video"}
-        <iframe width="500" height="315" src="http://www.youtube.com/embed/QIzzBEKvCsk" frameborder="0" allowfullscreen></iframe>
-      .span7
+      / .span5{:id => "demo_video"}
+      /   <iframe width="500" height="315" src="http://www.youtube.com/embed/QIzzBEKvCsk" frameborder="0" allowfullscreen></iframe>
+      .span12
         %center
           %h1 Continuing education made easy.
           %h3small We track your CPE requirements so you don't have to. <br><br>
+          =image_tag "ND.png"
+    .row
+      .span12
+        %center
           %a.btn.btn-primary.btn-large{:href => "/users/sign_up"} Register Now
+          <br><br><br><br>
           / %a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Register Now
     / %center
     /   %img(src="../img/arsenal-dot-dot-dot.png"){:id => "dot-dot-dot"}
-  .row{:id => "press"}
-    .span3
-      .well
-        %center
-          =image_tag "check_mark.png", :id => "check"
-          =image_tag "cpa.jpg"
-          %h5{:id => "segments_text"} CPAs
-    .span3
-      .well
-        %center
-          =image_tag "check_mark.png", :id => "check"
-          =image_tag "nurse.jpg"
-          %h5{:id => "segments_text"} RNs & CphTs
-    .span3
-      .well
-        %center
-          =image_tag "check_mark.png", :id => "check"
-          =image_tag "realestate.png"
-          %h5{:id => "segments_text"} Realestate Agents
-    .span3
-      .well
-        %center
-          =image_tag "check_mark.png", :id => "check"
-          =image_tag "lawyer.jpg"
-          %h5{:id => "segments_text"} Lawyers
+  / .row{:id => "press"}
+  /   .span3
+  /     .well
+  /       %center
+  /         =image_tag "check_mark.png", :id => "check"
+  /         =image_tag "cpa.jpg"
+  /         %h5{:id => "segments_text"} CPAs
+  /   .span3
+  /     .well
+  /       %center
+  /         =image_tag "check_mark.png", :id => "check"
+  /         =image_tag "nurse.jpg"
+  /         %h5{:id => "segments_text"} RNs & CphTs
+  /   .span3
+  /     .well
+  /       %center
+  /         =image_tag "check_mark.png", :id => "check"
+  /         =image_tag "realestate.png"
+  /         %h5{:id => "segments_text"} Realestate Agents
+  /   .span3
+  /     .well
+  /       %center
+  /         =image_tag "check_mark.png", :id => "check"
+  /         =image_tag "lawyer.jpg"
+  /         %h5{:id => "segments_text"} Lawyers
 / Modal
 #emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
   %center

@@ -6,24 +6,61 @@
 /   No Orders Found
 / = current_user.id
 / hey
-<br>
-- @myCourses.each do |k|
-  %p
-    %b Name:
-    = k.name
-  %p
-    %b Description:
-    = k.description
-  %p
-    %b Price:
-    = k.price
-  %p
-    %b Credit:
-    = k.credit
+/ %h3 My Progress:
+/ .progress.progress-striped.active
+/   .bar{:style => "width: 25%;"}
+.container
+  %center
+    %h1{:id => "dashboardheader"} CPE Dashboard
+    %h2 Jonathan Friedman
+  <br><br>
+  .row
+    .span8
+      %table{:class => "table table-hover table-bordered", :id => "DBtable"}
+        %thead
+          %th Course
+          %th Description
+          %th Credit Earned
+          %th Max Credit
+        %tbody
+          - @myCourses.each do |k|
+            %tr
+              %td
+                = k.name
+              %td
+                = k.description
+              %td
+                = k.price
+              %td
+                = k.credit
+    .span3
+      =image_tag "progress.png",:id => "progress_image"
+      .well{:id => "requirementswell"}
+        %center
+          %strong
+            %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
+      %a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add Course
+      <br><br><br>
+/ .container{:id => "progress"}
+/   =image_tag "progress.png",:id => "progress_image"
+/ <br>
+/ - @myCourses.each do |k|
+/   %p
+/     %b Name:
+/     = k.name
+/   %p
+/     %b Description:
+/     = k.description
+/   %p
+/     %b Price:
+/     = k.price
+/   %p
+/     %b Credit:
+/     = k.credit
+
+/ =image_tag "progress.png",:id => "progress"
 
 
-
-%a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Add Course
 
 
 #emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}

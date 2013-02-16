@@ -5,22 +5,23 @@
   /     %ul
   /       - @course.errors.full_messages.each do |msg|
   /         %li= msg
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  / .field
-  /   = f.label :price
-  /   = f.text_field :price
-  .field
-    = f.label :credit
-    = f.text_field :credit
-  .field
-    = f.label :hours
-    = f.text_field :hours
-  .field
-    = f.hidden_field :user_id, :value => current_user.id
-  .actions
-    = f.submit 'Save'
+  .form-horizontal
+    .field
+      = f.label :name
+      = f.text_field :name
+    .field
+      = f.label :description
+      = f.text_area :description
+    .field
+      = f.label :price
+      = f.text_field :price
+    .field
+      = f.label :credit
+      = f.text_field :credit
+    .field
+      = f.label :hours
+      = f.text_field :hours
+    .field
+      = f.hidden_field :user_id, :value => current_user.id
+    .actions
+      = f.submit 'Save'
