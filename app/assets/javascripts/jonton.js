@@ -1,5 +1,12 @@
-
 $(document).ready(function() {
+
+$("#progress").percentageLoader({
+        width : 256,  // width in pixels
+        height : 256, // height in pixels
+        progress: 0,  // initialise progress bar position, within the range [0..1]
+        value: '0kb'  // initialise text label to this value
+    });
+
 $('#emailContinue').click(function() {
     $('#emailModal').each(function() {
         if ($(this).offset().left < 0) {
