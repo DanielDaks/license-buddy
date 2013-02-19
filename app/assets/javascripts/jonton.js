@@ -41,6 +41,6 @@ $("#progress").percentageLoader({
 //   return false;
 // }
 
-//  });
+ });
 
 
