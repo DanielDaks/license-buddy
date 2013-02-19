@@ -63,7 +63,7 @@
 
 
 
-#emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
+#emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true"}
   %center
     .modal-header
       %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
@@ -72,7 +72,6 @@
       /   .bar{:style => "width: 25%;"}
     .modal-body
       = render :partial => "courses/form"
-     
     .modal-footer
       / %p.notice
       /   By clicking Continue, I agree to the
