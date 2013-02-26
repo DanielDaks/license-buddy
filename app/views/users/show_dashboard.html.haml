@@ -1,6 +1,5 @@
 = render :partial => 'layouts/nav'
 / = @id
-/ = @user.id
 / / = @course.id
 / - if @user.courses.empty?
 /   No Orders Found
@@ -12,7 +11,8 @@
 .container
   %center
     %h1{:id => "dashboardheader"} CPE Dashboard
-    %h2 Bill Heintz
+    %h2
+      = current_user.first_name + " " + current_user.last_name
   <br><br>
   .row
     .span8
