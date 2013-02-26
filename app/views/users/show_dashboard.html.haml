@@ -9,37 +9,44 @@
 / .progress.progress-striped.active
 /   .bar{:style => "width: 25%;"}
 .container
-  %center
-    %h1{:id => "dashboardheader"} CPE Dashboard
-    %h2
-      = current_user.first_name + " " + current_user.last_name
-  <br><br>
+  %left
+    / =image_tag "progress.png",:id => "progress_image"
+    %h4{:id => "dashboardheader"} Continuing Education Dashboard
+    %h6
+      = current_user.first_name + " " + current_user.last_name + ", CPA"
+  <br>
   .row
+    .span3
+      %center
+        =image_tag "progress.png",:id => "progress_image"
+        .well{:id => "requirementswell"}
+          %center
+            %strong
+              %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
+        %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
+
     .span8
+      %h6 Courses we recommend for you
+      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/governmental-pension-reporting-the-new-standards?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/acpen-signature-series-health-care-industry-accounting-regulatory-update?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/1040-workshop?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/1040-workshop?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
+      <br><br>
+      %h6 Courses you have done
       %table{:class => "table table-hover table-bordered", :id => "DBtable"}
         %thead
           %th Course
-          %th Description
           %th Credit Earned
-          %th Max Credit
+          %th Certificate
         %tbody
           - @myCourses.each do |k|
             %tr
               %td
                 = k.name
               %td
-                = k.description
-              %td
-                = k.price
-              %td
                 = k.credit
-    .span3
-      =image_tag "progress.png",:id => "progress_image"
-      .well{:id => "requirementswell"}
-        %center
-          %strong
-            %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
-      %a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add Course
+              %td
+                = k.filename
       <br><br><br>
 / .container{:id => "progress"}
 /   =image_tag "progress.png",:id => "progress_image"
@@ -73,6 +80,7 @@
     .modal-body
       = render :partial => "courses/form"
     .modal-footer
+
       / %p.notice
       /   By clicking Continue, I agree to the
       /   %a{"data-bhw" => "SubscriptionTermsOfService", "data-bhw-path" => "SubscriptionEmail|SubscriptionTermsOfService", :href => "/static_pages/legal", :target => "_blank"} Terms of Service

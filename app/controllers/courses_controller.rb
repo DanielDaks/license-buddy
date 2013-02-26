@@ -40,7 +40,13 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = current_user.courses.new(params[:course])
+    @course = current_user.courses.new(params[:course]) do |t|
+      if params[:course][:data]
+        t.data      = params[:course][:data].read
+        t.filename  = params[:course][:data].original_filename
+        t.mime_type = params[:course][:data].content_type
+      end
+    end
 
     respond_to do |format|
       if @course.save

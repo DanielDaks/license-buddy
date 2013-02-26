@@ -1,8 +1,8 @@
 class Course < ActiveRecord::Base
-  attr_accessible :credit, :description, :hours, :name, :price, :user_id
+  attr_accessible :credit, :description, :hours, :name, :price, :user_id, :filename, :data, :mime_type
    
    	belongs_to :user
   
-  validates :credit, :description, :name, :price, :hours, :presence => true
-  validates :credit, :price, :hours, :numericality => true
+  validates :credit, :name, :presence => true
+  validates :credit, :numericality => true
 end
