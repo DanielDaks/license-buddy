@@ -46,7 +46,9 @@
               %td
                 = k.credit
               %td
-                = k.filename
+                = link_to k.filename do
+                  = k.filename
+                
       <br><br><br>
 / .container{:id => "progress"}
 /   =image_tag "progress.png",:id => "progress_image"
