@@ -117,7 +117,10 @@ background-repeat: repeat;}*/
 #jeremy_pic{max-height: 25%;}
 #josh_pic{max-height: 25%;}
 #addclass{
-    margin-left: 67px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 12px;
     margin-top: 5px;
 }
 #requirementswell{
