@@ -30,11 +30,11 @@
             = k.distro + " progress:" 
             .progress.progress-striped
               .bar{:style => "width: #{(@sub_progress.where("distro = ?", k.distro).sum(:credit)/k.min)*100}%"}
-          .well{:id => "requirementswell"}
-            %center
-              %strong
-                %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
-          %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
+        .well{:id => "requirementswell"}
+          %center
+            %strong
+              %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
+        %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
 
     .span8
       %h6 Courses we recommend for you
