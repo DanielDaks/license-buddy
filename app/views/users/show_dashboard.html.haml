@@ -103,3 +103,11 @@
       / %h3{:id => "modal_text"} 
       / Already have an account?
       / %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "/users/sign_in"} Sign In
+#some-wizard.wizard
+  %h1 Wizard Title
+  .wizard-card{"data-cardname" => "card1"}
+    %h3 Profession
+    Name {<type="check_box" name="name" data-validate="validateName"}
+  .wizard-card{"data-cardname" => "card2"}
+    %h3 Organization
+    Some other content
