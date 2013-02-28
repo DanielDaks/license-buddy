@@ -8,7 +8,13 @@
 / %h3 My Progress:
 / .progress.progress-striped.active
 /   .bar{:style => "width: 25%;"}
-= @org
+- @sub_req.each do |k|
+  = k.min
+  = k.distro
+  .progress.progress-striped
+    .bar{:style => "width: 25%;"}
+
+/ = @sub_req_name
 .container
   %left
     / =image_tag "progress.png",:id => "progress_image"

@@ -9,7 +9,18 @@ class UsersController < ApplicationController
     @course = Course.new(params[:course])
     # @progress3 = Course.where("user_id = ?", current_user.id).sum(:credit) / 120.0
     @progress = current_user.courses.sum(:credit) / 120.0
-    @org = current_user.license.requirement
+    # @org = current_user.license.requirements.attribute
+    @sub_req = current_user.license.requirements
+
+
+
+
+
+
+
+
+
+
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
