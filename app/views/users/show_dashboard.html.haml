@@ -9,10 +9,10 @@
 / .progress.progress-striped.active
 /   .bar{:style => "width: 25%;"}
 - @sub_req.each do |k|
-  = k.min
+  = k.min / 50.0
   = k.distro
   .progress.progress-striped
-    .bar{:style => "width: 25%;"}
+    .bar{:style => "width: #{(5/k.min)*100}%"}
 
 / = @sub_req_name
 .container
