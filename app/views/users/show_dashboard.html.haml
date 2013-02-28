@@ -8,14 +8,10 @@
 / %h3 My Progress:
 / .progress.progress-striped.active
 /   .bar{:style => "width: 25%;"}
-- if @sub_req then
-  - @sub_req.each do |k|
-    = k.min / 50.0
-    = k.distro
-    .progress.progress-striped
-      .bar{:style => "width: #{(5/k.min)*100}%"}
+
 
 / = @sub_req_name
+/ = @sub_progress.where("distro = ?", "Core").sum(:credit)
 .container
   %left
     / =image_tag "progress.png",:id => "progress_image"
@@ -28,13 +24,17 @@
       %center
         / =image_tag "progress.png",:id => "progress_image"
         .div{:id => "progress", :"data-progress" => "#{@progress}", :"data-total" => "120"}
-        .progress.progress-striped
-          .bar{:style => "width: 25%;"}
-        .well{:id => "requirementswell"}
-          %center
-            %strong
-              %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
-        %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
+        - if @sub_req then
+          <br>
+          - @sub_req.each do |k|
+            = k.distro + " progress:" 
+            .progress.progress-striped
+              .bar{:style => "width: #{(@sub_progress.where("distro = ?", k.distro).sum(:credit)/k.min)*100}%"}
+          .well{:id => "requirementswell"}
+            %center
+              %strong
+                %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
+          %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
 
     .span8
       %h6 Courses we recommend for you
