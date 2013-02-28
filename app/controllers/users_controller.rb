@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     # @progress3 = Course.where("user_id = ?", current_user.id).sum(:credit) / 120.0
     @progress = current_user.courses.sum(:credit) / 120.0
     # @org = current_user.license.requirements.attribute
-    @sub_req = current_user.license.requirements
-
+    if current_user.license != nil then @sub_req = current_user.license.requirements
+    @requirement_distros = current_user.license.requirements.select(:distro) end
 
 
 

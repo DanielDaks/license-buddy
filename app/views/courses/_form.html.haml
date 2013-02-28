@@ -24,6 +24,12 @@
     .field
       = f.label :certificate
       = f.file_field :data
+
+    - if @sub_req != nil then
+      - @sub_req.each do |k|
+        .field
+          = f.label k.distro
+          = f.radio_button :distro, k.distro
     / .field
     /   = f.label :distro
     /   = f.check_box :distro
