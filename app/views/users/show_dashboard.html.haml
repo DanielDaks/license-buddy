@@ -18,7 +18,11 @@
   .row
     .span3
       %center
-        =image_tag "progress.png",:id => "progress_image"
+        / =image_tag "progress.png",:id => "progress_image"
+        = @progress
+        .div{:id => "progress", :"data-progress" => "#{@progress}", :"data-total" => "120"}
+        .progress.progress-striped
+          .bar{:style => "width: 25%;"}
         .well{:id => "requirementswell"}
           %center
             %strong
