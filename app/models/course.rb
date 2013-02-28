@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  attr_accessible :credit, :description, :hours, :name, :price, :user_id, :filename, :data, :mime_type
+  attr_accessible :credit, :description, :hours, :name, :price, :user_id, :filename, :data, :mime_type, :distro
    
    	belongs_to :user
   

@@ -25,6 +25,9 @@
       = f.label :certificate
       = f.file_field :data
     / .field
+    /   = f.label :distro
+    /   = f.check_box :distro
+    / .field
     /   = f.hidden_field :user_id, :value => current_user.id
     .actions
       = f.submit 'Save'

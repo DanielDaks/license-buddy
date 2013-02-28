@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228092627) do
+ActiveRecord::Schema.define(:version => 20130228104421) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20130228092627) do
     t.string   "filename"
     t.binary   "data"
     t.string   "mime_type"
+    t.string   "distro"
   end
 
   create_table "klasses", :force => true do |t|
