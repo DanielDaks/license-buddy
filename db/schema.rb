@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226035932) do
+ActiveRecord::Schema.define(:version => 20130228075352) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -25,6 +25,44 @@ ActiveRecord::Schema.define(:version => 20130226035932) do
     t.string   "filename"
     t.binary   "data"
     t.string   "mime_type"
+  end
+
+  create_table "klasses", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "price"
+    t.float    "credit"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "hours"
+    t.integer  "user_id"
+  end
+
+  add_index "klasses", ["user_id"], :name => "index_klasses_on_user_id"
+
+  create_table "licenses", :force => true do |t|
+    t.string   "license"
+    t.string   "state"
+    t.string   "organization"
+    t.text     "description"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "requirements", :force => true do |t|
+    t.string   "attribute"
+    t.float    "max"
+    t.float    "min"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "statutes", :force => true do |t|
+    t.integer  "license_id"
+    t.integer  "requirement_id"
+    t.date     "deadline"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -42,9 +80,7 @@ ActiveRecord::Schema.define(:version => 20130226035932) do
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "filename"
-    t.binary   "data"
-    t.string   "mime_type"
+    t.integer  "license_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
