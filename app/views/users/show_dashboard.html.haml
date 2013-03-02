@@ -57,9 +57,9 @@
               %td
                 = k.credit
               %td
-                = link_to k.filename do
-                  = k.filename
-                
+                / = link_to k.filename,:action => :download, :file_name => k.filename do 
+                /   = k.filename
+                = link_to k.filename, :action => :download, :file_name => k.filename, :mime_type => k.mime_type
       <br><br><br>
 / .container{:id => "progress"}
 /   =image_tag "progress.png",:id => "progress_image"

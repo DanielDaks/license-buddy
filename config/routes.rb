@@ -10,6 +10,8 @@ LBuddy::Application.routes.draw do
 
   get "users/edit"
 
+  get "users/download"
+
   get "dashboard/:id", :to => "users#show_dashboard"
 
 authenticated :user do
