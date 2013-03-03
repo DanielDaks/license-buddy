@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(:version => 20130303020045) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "klasses", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.float    "price"
+    t.float    "credit"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "hours"
+    t.integer  "user_id"
+  end
+
+  add_index "klasses", ["user_id"], :name => "index_klasses_on_user_id"
+
   create_table "licenses", :force => true do |t|
     t.string   "license"
     t.string   "state"
@@ -72,9 +85,6 @@ ActiveRecord::Schema.define(:version => 20130303020045) do
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "filename"
-    t.binary   "data"
-    t.string   "mime_type"
     t.integer  "license_id"
   end
 
