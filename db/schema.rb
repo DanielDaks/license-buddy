@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228104421) do
+ActiveRecord::Schema.define(:version => 20130303020045) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
@@ -20,26 +20,17 @@ ActiveRecord::Schema.define(:version => 20130228104421) do
     t.float    "price"
     t.float    "hours"
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.string   "filename"
     t.binary   "data"
     t.string   "mime_type"
     t.string   "distro"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
-
-  create_table "klasses", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.float    "price"
-    t.float    "credit"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "hours"
-    t.integer  "user_id"
-  end
-
-  add_index "klasses", ["user_id"], :name => "index_klasses_on_user_id"
 
   create_table "licenses", :force => true do |t|
     t.string   "license"
@@ -81,6 +72,9 @@ ActiveRecord::Schema.define(:version => 20130228104421) do
     t.datetime "updated_at",                             :null => false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "filename"
+    t.binary   "data"
+    t.string   "mime_type"
     t.integer  "license_id"
   end
 

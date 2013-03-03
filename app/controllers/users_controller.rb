@@ -18,13 +18,6 @@ class UsersController < ApplicationController
     end
   end
 
-
-
-
-
-
-
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
@@ -117,4 +110,9 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def download
+    data = open(params[:file_url]) 
+    send_data data.read, :type => data.content_type, :x_sendfile => true, :filename => params[:file_name]
+  end 
 end

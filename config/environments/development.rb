@@ -59,4 +59,16 @@ config.action_mailer.smtp_settings = {
   password: ENV["pinkipassword"]
 }
 
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    # :bucket => ENV['AWS_BUCKET'],
+    # :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    # :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    :bucket => 'licensebuddy',
+    :access_key_id => 'AKIAJ2DGFGDY3H3QEZLQ',
+    :secret_access_key => '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'
+  }
+}
+
 end
