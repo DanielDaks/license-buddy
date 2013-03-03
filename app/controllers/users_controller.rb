@@ -112,7 +112,7 @@ class UsersController < ApplicationController
   end
 
   def download
-    @data = Course.where("filename = ?", params[:file_name]).pluck(:data) 
-    send_data(@data, :type => params[:mime_type], :filename => params[:file_name]) 
+    data = open(params[:file_url]) 
+    send_data data.read, :type => data.content_type, :x_sendfile => true, :filename => params[:file_name]
   end 
 end

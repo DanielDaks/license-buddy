@@ -12,6 +12,8 @@ gem 'pg', '0.12.2'
 gem 'thin'
 gem "devise", ">= 2.1.0"
 gem "twitter-bootstrap-rails"
+gem "paperclip"
+gem "aws-sdk"
 
 # Gems used only for assets and not required
 # in production environments by default.
