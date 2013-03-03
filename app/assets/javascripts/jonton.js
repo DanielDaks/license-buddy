@@ -5,11 +5,11 @@ $("#progress").percentageLoader({
         progress: $("#progress").data('progress'),  // initialise progress bar position, within the range [0..1]
         value: $("#progress").data('total')  // initialise text label to this value
     });
-$(function() {
-    var options = {};
-    var wizard = $("#some-wizard").wizard(options);
-    wizard.show();
-});
+// $(function() {
+//     var options = {};
+//     var wizard = $("#some-wizard").wizard(options);
+//     wizard.show();
+// });
 // $('#emailContinue').click(function() {
 //     $('#emailModal').each(function() {
 //         if ($(this).offset().left < 0) {
