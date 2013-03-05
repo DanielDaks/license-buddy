@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#login html, body, div, span, applet, object, iframe,
+DIV.login {
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, font, img, ins, kbd, q, s, samp,
@@ -19,7 +20,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 	background: transparent;
 }
-#login body {
+body {
 	background: #DCDDDF url(http://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
 	color: #000;
 	font: 14px Arial;
@@ -27,31 +28,31 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 0;
 	position: relative;
 }
-#login h1{ font-size:28px;}
-#login h2{ font-size:26px;}
-#login h3{ font-size:18px;}
-#login h4{ font-size:16px;}
-#login h5{ font-size:14px;}
-#login h6{ font-size:12px;}
-#login h1,h2,h3,h4,h5,h6{ color:#563D64;}
-#login small{ font-size:10px;}
-#login b, strong{ font-weight:bold;}
-#login a{ text-decoration: none; }
-#login a:hover{ text-decoration: underline; }
-#login .left { float:left; }
-#login .right { float:right; }
-#login .alignleft { float: left; margin-right: 15px; }
-#login .alignright { float: right; margin-left: 15px; }
-#login .clearfix:after,
-#login form:after {
+h1{ font-size:28px;}
+h2{ font-size:26px;}
+h3{ font-size:18px;}
+h4{ font-size:16px;}
+h5{ font-size:14px;}
+h6{ font-size:12px;}
+h1,h2,h3,h4,h5,h6{ color:#563D64;}
+small{ font-size:10px;}
+b, strong{ font-weight:bold;}
+a{ text-decoration: none; }
+a:hover{ text-decoration: underline; }
+.left { float:left; }
+.right { float:right; }
+.alignleft { float: left; margin-right: 15px; }
+.alignright { float: right; margin-left: 15px; }
+.clearfix:after,
+form:after {
 	content: ".";
 	display: block;
 	height: 0;
 	clear: both;
 	visibility: hidden;
 }
-#login .container { margin: 25px auto; position: relative; width: 900px; }
-#login #content {
+.container { margin: 25px auto; position: relative; width: 900px; }
+#content {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(248,248,248,1) 0%,rgba(249,249,249,1) 100%);
@@ -72,22 +73,22 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	text-shadow: 0 1px 0 #fff;
 	width: 400px;
 }
-#login #content h1 {
+#content h1 {
 	color: #7E7E7E;
 	font: bold 25px Helvetica, Arial, sans-serif;
 	letter-spacing: -0.05em;
 	line-height: 20px;
 	margin: 10px 0 30px;
 }
-#login #content h1:before,
-#login #content h1:after {
+#content h1:before,
+#content h1:after {
 	content: "";
 	height: 1px;
 	position: absolute;
 	top: 10px;
 	width: 27%;
 }
-#login #content h1:after {
+#content h1:after {
 	background: rgb(126,126,126);
 	background: -moz-linear-gradient(left,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
 	background: -webkit-linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
@@ -96,7 +97,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: linear-gradient(left,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
     right: 0;
 }
-#login #content h1:before {
+#content h1:before {
 	background: rgb(126,126,126);
 	background: -moz-linear-gradient(right,  rgba(126,126,126,1) 0%, rgba(255,255,255,1) 100%);
 	background: -webkit-linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
@@ -105,7 +106,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: linear-gradient(right,  rgba(126,126,126,1) 0%,rgba(255,255,255,1) 100%);
     left: 0;
 }
-#login #content:after,
+#content:after,
 #content:before {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
@@ -122,7 +123,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	position: absolute;
 	width: 100%;
 }
-#login #content:after {
+#content:after {
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg);
 	-ms-transform: rotate(2deg);
@@ -131,7 +132,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	top: 0;
 	z-index: -1;
 }
-#login #content:before {
+#content:before {
 	-webkit-transform: rotate(-3deg);
 	-moz-transform: rotate(-3deg);
 	-ms-transform: rotate(-3deg);
@@ -140,9 +141,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	top: 0;
 	z-index: -2;
 }
-#login #content form { margin: 0 20px; position: relative }
-#login #content form input[type="text"],
-#login #content form input[type="password"] {
+#content form { margin: 0 20px; position: relative }
+#content form input[type="text"],
+#content form input[type="password"] {
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	-ms-border-radius: 3px;
@@ -166,8 +167,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	padding: 15px 10px 15px 40px;
 	width: 80%;
 }
-#login #content form input[type="text"]:focus,
-#login #content form input[type="password"]:focus {
+#content form input[type="text"]:focus,
+#content form input[type="password"]:focus {
 	-webkit-box-shadow: 0 0 2px #ed1c24 inset;
 	-moz-box-shadow: 0 0 2px #ed1c24 inset;
 	-ms-box-shadow: 0 0 2px #ed1c24 inset;
@@ -177,9 +178,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 1px solid #ed1c24;
 	outline: none;
 }
-#login #username { background-position: 10px 15px !important }
-#login #password { background-position: 10px -47px !important }
-#login #content form input[type="submit"] {
+#username { background-position: 10px 15px !important }
+#password { background-position: 10px -47px !important }
+#content form input[type="submit"] {
 	background: rgb(254,231,154);
 	background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(254,231,154,1) 0%,rgba(254,193,81,1) 100%);
@@ -208,7 +209,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 	width: 120px;
 }
-#login #content form input[type="submit"]:hover {
+#content form input[type="submit"]:hover {
 	background: rgb(254,193,81);
 	background: -moz-linear-gradient(top,  rgba(254,193,81,1) 0%, rgba(254,231,154,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
@@ -217,14 +218,14 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
 }
-#login #content form div a {
+#content form div a {
 	color: #004a80;
     float: right;
     font-size: 12px;
     margin: 30px 15px 0 0;
     text-decoration: underline;
 }
-#login .button {
+.button {
 	background: rgb(247,249,250);
 	background: -moz-linear-gradient(top,  rgba(247,249,250,1) 0%, rgba(240,240,240,1) 100%);
 	background: -webkit-linear-gradient(top,  rgba(247,249,250,1) 0%,rgba(240,240,240,1) 100%);
@@ -245,7 +246,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	border-top: 1px solid #CFD5D9;
 	padding: 15px 0;
 }
-#login .button a {
+.button a {
 	background: url(http://cssdeck.com/uploads/media/items/8/8bcLQqF.png) 0 -112px no-repeat;
 	color: #7E7E7E;
 	font-size: 17px;
@@ -257,7 +258,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
-#login .button a:hover {
+.button a:hover {
 	background-position: 0 -135px;
 	color: #00aeef;
+}
 }
