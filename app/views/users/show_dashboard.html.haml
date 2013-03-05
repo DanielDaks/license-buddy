@@ -86,15 +86,16 @@
 
 
 #emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true"}
-  %center
-    .modal-header
-      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-      %h3#myModalLabel Add your class
-      / .progress.progress-striped.active
-      /   .bar{:style => "width: 25%;"}
-    .modal-body
-      = render :partial => "courses/form"
-    .modal-footer
+  %section#content
+    %center
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+        %h3#myModalLabel Add your class
+        / .progress.progress-striped.active
+        /   .bar{:style => "width: 25%;"}
+      .modal-body
+        = render :partial => "courses/form"
+      .modal-footer
 
       / %p.notice
       /   By clicking Continue, I agree to the

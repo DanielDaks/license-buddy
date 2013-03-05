@@ -45,13 +45,18 @@ class CoursesController < ApplicationController
         t.data      = params[:course][:data].read
         t.filename  = params[:course][:data].original_filename
         t.mime_type = params[:course][:data].content_type
-    redirect_to show_path
+    @course.save
+      redirect_to action: :meow
+        # format.html { redirect_to(:action => 'index') }
+        # format.html {redirect_to dashboard_path, :notice => 'User was successfully created.' }
+
+    # redirect_to 'localhost:3000'
       end
     end
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to '/', notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }

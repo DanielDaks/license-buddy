@@ -14,6 +14,9 @@ LBuddy::Application.routes.draw do
 
   get "dashboard/:id", :to => "users#show_dashboard"
 
+  get "courses/:id" => "posts#meow"
+
+
 authenticated :user do
   root :to => "users#show_dashboard"
 end

@@ -1,9 +1,6 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-#login {
+/* Reset CSS */
+/*#reset {*/
+#reset{
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -179,8 +176,8 @@ form:after {
 	border: 1px solid #ed1c24;
 	outline: none;
 }
-#username { background-position: 10px 15px !important }
-#password { background-position: 10px -47px !important }
+#username { background-position: 10px 10px !important }
+#password { background-position: 10px -53px !important }
 #content form input[type="submit"] {
 	background: rgb(254,231,154);
 	background: -moz-linear-gradient(top,  rgba(254,231,154,1) 0%, rgba(254,193,81,1) 100%);

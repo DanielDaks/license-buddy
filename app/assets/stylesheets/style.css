@@ -172,4 +172,10 @@ background-repeat: repeat;}*/
 /*    display: inline-block;*/
     text-transform: uppercase;
 }
+#login{
+    padding-bottom: 50px;
+}
+#call-to-action{
+    padding-bottom: 50px;
+}
 }
