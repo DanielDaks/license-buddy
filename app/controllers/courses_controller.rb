@@ -45,6 +45,7 @@ class CoursesController < ApplicationController
         t.data      = params[:course][:data].read
         t.filename  = params[:course][:data].original_filename
         t.mime_type = params[:course][:data].content_type
+    redirect_to show_path
       end
     end
 

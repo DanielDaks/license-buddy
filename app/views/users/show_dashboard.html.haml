@@ -35,16 +35,17 @@
             %strong
               %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
         %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
-
-    .span8
+    .span1
+    .span7
       %h6 Courses we recommend for you
-      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/governmental-pension-reporting-the-new-standards?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
-      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/acpen-signature-series-health-care-industry-accounting-regulatory-update?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
-      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/1040-workshop?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
-      %iframe.shopify-widget{:frameborder => "0", :height => "223", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/1040-workshop?shop=license-buddy.myshopify.com&style=mnml&image-size=compact&destination=checkout", :width => "150"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "310", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/business-taxation?shop=license-buddy.myshopify.com&style=artgallery&image-size=compact&button-text=Take+Course&destination=cart", :width => "160"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "310", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/corporate-taxation-minicourse?shop=license-buddy.myshopify.com&style=artgallery&image-size=compact&button-text=Take+Course&destination=cart", :width => "160"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "310", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/ethics-update-for-texas-cpas?shop=license-buddy.myshopify.com&style=artgallery&image-size=compact&button-text=Take+Course&destination=cart", :width => "160"}
+      %iframe.shopify-widget{:frameborder => "0", :height => "310", :scrolling => "no", :src => "http://widgets.shopifyapps.com/products/accounting-basics-for-finance-professionals-4-credits?shop=license-buddy.myshopify.com&style=artgallery&image-size=compact&button-text=Take+Course&destination=cart", :width => "160"}
       <br><br>
-      %h6 Courses you have done
+      / %h6 Courses you have done
       %table{:class => "table table-hover table-bordered", :id => "DBtable"}
+        / %caption Your past courses:
         %thead
           %th Course
           %th Credit Earned
@@ -61,7 +62,7 @@
                   = link_to k.avatar_file_name, :action => :download, :file_url => k.avatar.url, :file_name => k.avatar_file_name
                 - else
                   no file
-      <br><br><br>
+
 / .container{:id => "progress"}
 /   =image_tag "progress.png",:id => "progress_image"
 / <br>
