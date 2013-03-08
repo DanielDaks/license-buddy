@@ -4652,7 +4652,7 @@ a.thumbnail:hover {
   background-color: #ffffff;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  *border: 1px solid #999;
+  border: 1px solid #999;
   /* IE6-7 */
 
   -webkit-border-radius: 6px;
@@ -5270,14 +5270,14 @@ button.close {
   .controls-row [class*="span"] + [class*="span"] {
     margin-left: 0;
   }
-  .modal {
+/*  .modal {
     position: fixed;
     top: 20px;
     left: 20px;
     right: 20px;
     width: auto;
     margin: 0;
-  }
+  }*/
   .modal.fade {
     top: -100px;
   }
@@ -5323,11 +5323,11 @@ button.close {
     margin-right: 0;
     margin-left: 0;
   }
-  .modal {
+/*  .modal {
     top: 10px;
     left: 10px;
     right: 10px;
-  }
+  }*/
   .modal-header .close {
     padding: 10px;
     margin: -10px;

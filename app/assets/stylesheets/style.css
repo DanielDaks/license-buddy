@@ -48,10 +48,10 @@ background-repeat: repeat;}*/
 #segments_text{
     padding-top: 2px;
 }
-#modalText{
+/*#modalText{
     width: 500px;
     height: 100px;
-}
+}*/
 #press{
     padding-top: 25px;
 }
@@ -93,14 +93,14 @@ background-repeat: repeat;}*/
     margin-top: 40px;
 }
 .notice{font-size:12px;text-align:center;color:#bcbcbc}
-.modal_window .modal_main h3{font-size:1.6em;color:#545454;margin-bottom:34px;font-weight:normal}
-
-#modal_text{font-size: 12px;}
+/*.modal_window .modal_main h3{font-size:1.6em;color:#545454;margin-bottom:34px;font-weight:normal}
+*/
+/*#modal_text{font-size: 12px;}*/
 .buttons.large{font-size:18px;padding:10px 20px}
 
 .header.double h2{margin:3px 0; color: #494949; font-size: 24px; font-family: "Helvetica Neue",Helvetica,Arial,FreeSans,sans-serif; text-align: center; line-height: 24px;}html body #article form > .section > .header.double p.sub_title{font-size:14px;margin:0;color:#aaa;}
-#modal_sub{text-shadow: #fff 1px 1px 0px; color: #aaa; font-size: 13px; text-align: center;}
-.modal-body{background: #f9f9f9;}
+/*#modal_sub{text-shadow: #fff 1px 1px 0px; color: #aaa; font-size: 13px; text-align: center;}
+.modal-body{background: #f9f9f9;}*/
 #progress_indicator .step .connector{border-top:1px solid #ccc;display:inline-block;height:5px;width:125px;margin:0 10px}
 #progress_indicator{height:50px;margin:0 auto;position:relative;width:215px;}
 /*#emailContinue{right}*/
@@ -140,10 +140,10 @@ background-repeat: repeat;}*/
 
 #emailModal{
     /* Size and position */
-/*    width: 340px;
+    width: 340px;
     margin: 60px auto 30px;
     padding: 15px;
- */
+ 
     /* Styles */
     background: #fffaf6;
     border-radius: 4px;
@@ -172,10 +172,21 @@ background-repeat: repeat;}*/
 /*    display: inline-block;*/
     text-transform: uppercase;
 }
-#login{
+.login{
     padding-bottom: 50px;
 }
 #call-to-action{
     padding-bottom: 50px;
 }
+
+#register_button{
+    margin-top: 115px;
 }
+#submit-button{
+    text-align: center;
+}
+
+/*#hello{
+    padding-left: 100px;
+    padding-top: 150px;
+}*/

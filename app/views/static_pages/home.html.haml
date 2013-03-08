@@ -9,141 +9,46 @@
         %center
           %h1 We make having a professional license EASY.
           %h3small Get started today! <br><br>
-    .row
-      .span12
-        %center
-          %a.btn.btn-primary.btn-large{:href => "/users/sign_up"} Register Now
-  .login
-    .row
-      %section#content
-        = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-          %h1 Login
-          %div
-            / %input#username{:placeholder => "Username", :required => "", :type => "text", :name => "user[email]"}/
-            = f.email_field :email, :autofocus => true, :id => "username", :type => "text", :placeholder => "  Username", :required => ""
-          %div
-            / %input#password{:placeholder => "Password", :required => "", :type => "password"}/
-            = f.password_field :password, :placeholder => "  Password", :required => "", :id => "password"
-          %div
-            %input{:type => "submit", :value => "Log in"}/
-            %a{:href => "/users/password/new"} Forgot your password?
-            %a{:href => "/users/sign_up"} Register
-          / %a.btn.btn-primary.btn-large{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "registerButton"} Register Now
-    / %center
-    /   %img(src="../img/arsenal-dot-dot-dot.png"){:id => "dot-dot-dot"}
-  / .row{:id => "press"}
-  /   .span3
-  /     .well
-  /       %center
-  /         =image_tag "check_mark.png", :id => "check"
-  /         =image_tag "cpa.jpg"
-  /         %h5{:id => "segments_text"} CPAs
-  /   .span3
-  /     .well
-  /       %center
-  /         =image_tag "check_mark.png", :id => "check"
-  /         =image_tag "nurse.jpg"
-  /         %h5{:id => "segments_text"} RNs & CphTs
-  /   .span3
-  /     .well
-  /       %center
-  /         =image_tag "check_mark.png", :id => "check"
-  /         =image_tag "realestate.png"
-  /         %h5{:id => "segments_text"} Realestate Agents
-  /   .span3
-  /     .well
-  /       %center
-  /         =image_tag "check_mark.png", :id => "check"
-  /         =image_tag "lawyer.jpg"
-  /         %h5{:id => "segments_text"} Lawyers
-/ Modal
-#emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
-  %center
-    .modal-header
-      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-      %h3#myModalLabel Step 1
-      .progress.progress-striped.active
-        .bar{:style => "width: 25%;"}
-    .modal-body
-      .header.double
-        %h2{:name => "step1"} Your Email Address
-      %fieldset
-        %form
-        = label :user, :email, "Email"
-        = text_field :user, :email
-        = label :user, :password
-        = password_field :user, :password
-        %input{:type => "submit", :value => "Sign Up", :id => "emailContinue"}
+    / .row
+    /   .span12
+    /     %center
+    /       %a.btn.btn-primary.btn-large{:href => "/users/sign_up"} Register Now
+  .row
+    .span5
+      .login
+        %section#content1
+          = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+            %h1 Sign up
+            .row
+              .form-inline
+                = f.label :Name, :id => "register-label"
+                = f.text_field :first_name, :autofocus => true, :placeholder => "First Name"
+                / = f.label :last_name
+                = f.text_field :last_name, :placeholder => "Last Name"
+            .form-inline
+              = f.label :email, :id => "register-label"
+              = f.email_field :email, :placeholder => "Your Email", :type => "text", :id => "username"
+            .form-inline
+              = f.label :password, :id => "register-label"
+              = f.password_field :password, :placeholder => "New Password"
+            #submit-button
+              = f.submit "Sign up"
+    .offset6
+      .span5
+        .login
+          %section#content
+            = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+              %h1 Login
+              %div
+                / %input#username{:placeholder => "Username", :required => "", :type => "text", :name => "user[email]"}/
+                = f.email_field :email, :autofocus => true, :id => "username", :type => "text", :placeholder => "  Username", :required => ""
+              %div
+                / %input#password{:placeholder => "Password", :required => "", :type => "password"}/
+                = f.password_field :password, :placeholder => "  Password", :required => "", :id => "password"
+              %div
+                %input{:type => "submit", :value => "Log in"}/
+                %a{:href => "/users/password/new"} Forgot your password?
+                / = if devise_mapping.rememberable?
+                /   - f.label :remember_me, f.check_box => :remember_me
 
-        / %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
-        /   .field.subscriptions_subscribe_with_places_email.text
-        /     %label.medium{:for => "subscriptions_subscribe_with_places_email"}
-        /     %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "subscriptions_subscribe_with_places[email]", :size => "30", :type => "text",}
-        / .button
-        /   %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
-    .modal-footer
-      %p.notice
-        By clicking Continue, I agree to the
-        %a{"data-bhw" => "SubscriptionTermsOfService", "data-bhw-path" => "SubscriptionEmail|SubscriptionTermsOfService", :href => "/static_pages/legal", :target => "_blank"} Terms of Service
-        and
-        = succeed "." do
-          %a{"data-bhw" => "SubscriptionPrivacyStatement", "data-bhw-path" => "SubscriptionEmail|SubscriptionPrivacyStatement", :href => "/static_pages/legal", :target => "_blank"} Privacy Statement
-      %h3{:id => "modal_text"} 
-      Already have an account?
-      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "/users/sign_in"} Sign In
-
-
-#licenseModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true",}
-  %center
-    .modal-header
-      %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
-      %h3#myModalLabel Step 2
-      .progress.progress-striped.active
-        .bar{:style => "width: 50%;"}
-    .modal-body
-      .header.double
-        %h2{:name => "step1"} Your License
-      %fieldset
-        %input#division-id{:name => "subscriptions_subscribe_with_places[division_id]", :type => "hidden", :value => "chicago"}
-          .field.subscriptions_subscribe_with_places_email.text
-            %label.medium{:for => "subscriptions_subscribe_with_places_email"}
-            %input#email.input{:autofocus => "true", "data-bhw" => "SubscriptionEmailInput", "data-bhw-path" => "SubscriptionEmail|SubscriptionEmailInput", :name => "UserEmail", :size => "30", :type => "text", "input placeholder" => "e.g., CPA, RN, etc.", :id => "UserEmail",}
-        .button
-          %a.btn.btn-primary.btn-large{"data-target" => "#licenseModal", "data-toggle" => "modal", :type => "button", :id => "emailContinue"} Continue
-    .modal-footer
-      %h3{:id => "modal_text"} 
-      Already have an account?
-      %a{"data-bhw" => "SubscriptionSignIn", "data-bhw-path" => "SubscriptionEmail|SubscriptionSignIn", :href => "users/sign_in"} Sign In
-  /   %button.btn{:id => "close"} Close
-  /   / "aria-hidden" => "true", "data-dismiss" => "modal",
-  /   %button.btn.btn-primary Save changes
-
-/ #windowTitleDialog.modal.hide.fade.in{"aria-hidden" => "true", "aria-labelledby" => "windowTitleLabel", :role => "dialog", :style => "display: block;", :tabindex => "-1", "data-keyboard" => "true",}
-/   .modal-header
-/     %a.close{"data-dismiss" => "modal", :class => "close", "data-target" => "#windowTitleDialog"} ×
-/     #progress_indicator{"data-bhw" => "progress_indicator", "data-bhw-path" => "P13n Wiz|progress_indicator"}
-/     .stepped_progress_bar.incomplete
-/     .step.completed_step.viewed
-/       %div
-/         %span.step_number 1
-/         .connector
-/       %span.step_name License
-/     .step.viewed
-/       %div
-/         %span.step_number 2
-/         .connector
-/       %span.step_name Location
-/     .step
-/       %div
-/         %span.step_number 3
-/       %span.step_name Contact
-/   .stepped_progress_bar.complete{:style => "clip: rect(0px 244px 40px 0px);"}
-/     .step
-/       %span.step_number 1
-/       .connector
-/     .step
-/       %span.step_number 2
-/       .connector
-/     .step
-/       %span.step_number 3
-
+/ %a.btn.btn-primary.btn-large{:href => "/users/sign_up", :id => "register_button"} Register Now
