@@ -179,6 +179,7 @@ background-repeat: repeat;}*/
 
 #emailModal3 .login{
     padding-bottom: 0px !important;
+    margin-bottom: 0px;
 }
 
 #call-to-action{
@@ -194,6 +195,7 @@ background-repeat: repeat;}*/
 
 #emailModal3 .login3 #content{
     width: 500px;
+    font-size: 85%;
 }
 
 #emailModal3 .login3 #content form input[type="submit"] {
