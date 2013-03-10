@@ -204,6 +204,9 @@ background-repeat: repeat;}*/
     font-size: 15px;
     vertical-align: bottom;
 }
+#login-page{
+    margin-top: 10%;
+}
 /*#hello{
     padding-left: 100px;
     padding-top: 150px;
