@@ -34,7 +34,7 @@
           %center
             %strong
               %p{:id => "requirementtext"} Requirements: <br> 120 hours of acceptable CPE in the immediate preceding three reporting periods and at least 20 credit hours each year.
-        %a.btn.btn-primary.btn-small{"data-target" => "#emailModal", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
+        %a.btn.btn-primary.btn-small{"data-target" => "#emailModal3", "data-toggle" => "modal", :type => "button", :id => "addclass"} Add past course
     .span1
     .span7
       %h6 Courses we recommend for you
@@ -85,10 +85,13 @@
 
 
 
-#emailModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true"}
-  .login
-    .container#content1
-      = render :partial => "courses/form"
+#emailModal3.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1", "data-backdrop" => "true"}
+  .login3
+    %section#content
+      .modal-header
+        %h2 Add Course
+      .modal-body
+        = render :partial => "courses/form"
 
 
 / %p.notice

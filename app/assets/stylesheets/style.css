@@ -93,14 +93,14 @@ background-repeat: repeat;}*/
     margin-top: 40px;
 }
 .notice{font-size:12px;text-align:center;color:#bcbcbc}
-/*.modal_window .modal_main h3{font-size:1.6em;color:#545454;margin-bottom:34px;font-weight:normal}
-*/
+.modal_window .modal_main h3{font-size:1.6em;color:#545454;margin-bottom:34px;font-weight:normal}
+
 /*#modal_text{font-size: 12px;}*/
 .buttons.large{font-size:18px;padding:10px 20px}
 
 .header.double h2{margin:3px 0; color: #494949; font-size: 24px; font-family: "Helvetica Neue",Helvetica,Arial,FreeSans,sans-serif; text-align: center; line-height: 24px;}html body #article form > .section > .header.double p.sub_title{font-size:14px;margin:0;color:#aaa;}
-/*#modal_sub{text-shadow: #fff 1px 1px 0px; color: #aaa; font-size: 13px; text-align: center;}
-.modal-body{background: #f9f9f9;}*/
+#modal_sub{text-shadow: #fff 1px 1px 0px; color: #aaa; font-size: 13px; text-align: center;}
+.modal-body{background: #f9f9f9;}
 #progress_indicator .step .connector{border-top:1px solid #ccc;display:inline-block;height:5px;width:125px;margin:0 10px}
 #progress_indicator{height:50px;margin:0 auto;position:relative;width:215px;}
 /*#emailContinue{right}*/
@@ -117,6 +117,7 @@ background-repeat: repeat;}*/
     padding-bottom: 10px;
     margin-left: 12px;
     margin-top: 5px;
+    margin-bottom: 30px;
 }
 #requirementswell{
     margin-top: 15px;
@@ -140,18 +141,18 @@ background-repeat: repeat;}*/
 
 #emailModal{
     /* Size and position */
-    width: 340px;
-    margin: 60px auto 30px;
-    padding: 15px;
+    width: auto;
+/*    margin: 60px auto 30px;*/
+/*    padding: 15px;*/
  
     /* Styles */
-    background: #fffaf6;
+/*    background: #fffaf6;
     border-radius: 4px;
     color: #555;
     box-shadow:
         0 2px 2px rgba(0,0,0,0.2),        
         0 1px 5px rgba(0,0,0,0.2),        
-        0 0 0 10px #61a1cb; 
+        0 0 0 10px #61a1cb; */
 }
 
 #myModalLabel{
@@ -172,9 +173,14 @@ background-repeat: repeat;}*/
 /*    display: inline-block;*/
     text-transform: uppercase;
 }
-.login{
+.login {
     padding-bottom: 50px;
 }
+
+#emailModal3 .login{
+    padding-bottom: 0px !important;
+}
+
 #call-to-action{
     padding-bottom: 50px;
 }
@@ -186,6 +192,18 @@ background-repeat: repeat;}*/
     text-align: center;
 }
 
+#emailModal3 .login3 #content{
+    width: 500px;
+}
+
+#emailModal3 .login3 #content form input[type="submit"] {
+    width: 90%;
+    margin-bottom: 20px;
+}
+#file-upload{
+    font-size: 15px;
+    vertical-align: bottom;
+}
 /*#hello{
     padding-left: 100px;
     padding-top: 150px;
