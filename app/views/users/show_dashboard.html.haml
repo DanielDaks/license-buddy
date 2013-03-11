@@ -55,6 +55,13 @@
           %th Credit Earned
           %th Certificate
         %tbody
+          - if @myCourses.empty? then 
+            %tr
+              %td
+              %td 
+                %center#italic
+                  No Course History
+              %td
           - @myCourses.each do |k|
             %tr
               %td

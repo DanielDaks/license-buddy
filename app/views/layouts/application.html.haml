@@ -8,12 +8,12 @@
 %body
   %hr{:id => "top-purple-line"}
   .container{:id => "page_container"}
-    - if flash[:notice]
-      %p.notice.alert.alert-success= flash[:notice]
-    - if flash[:error]
-      %p.erroralert.alert-error= flash[:error]
+    / - if flash[:notice]
+    /   %p.notice.alert.alert-success= flash[:notice]
+    / - if flash[:error]
+    /   %p.erroralert.alert-error= flash[:error]
     = yield
 %footer
   %hr{:id => "bottom-purple-line"}
     #footertext
-      %h3small © 2012 License Buddy, Inc. All rights reserved.
+      %h3small © 2013 License Buddy, Inc. All rights reserved.

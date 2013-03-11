@@ -36,7 +36,9 @@ h4 small {
     top: 15px;
     position: relative;
 }
-
+#italic{
+    font-style: italic;
+}
 /*#value {background-image:url('../img/value-bg.jpg');
 background-repeat: repeat;}*/
 
