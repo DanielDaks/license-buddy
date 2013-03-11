@@ -12,6 +12,10 @@
 
 / = @sub_req_name
 / = @sub_progress.where("distro = ?", "Core").sum(:credit)
+/ = current_user.license_id
+/ Requirement.select(:min).where(:distro => 'General')
+/ = @nick = Statutes.select(:requirement_id).where(license_id = current_user.license_id).to_a
+= @nick
 .container
   %left
     / =image_tag "progress.png",:id => "progress_image"
@@ -23,7 +27,7 @@
     .span3
       %center
         / =image_tag "progress.png",:id => "progress_image"
-        .div{:id => "progress", :"data-progress" => "#{@progress}", :"data-total" => "80"}
+        .div{:id => "progress", :"data-progress" => "#{@progress}", :"data-total" => "#{@progressRequirement}"}
         - if @sub_req then
           <br>
           - @sub_req.each do |k|

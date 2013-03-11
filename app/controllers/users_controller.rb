@@ -8,9 +8,10 @@ class UsersController < ApplicationController
     # @usercourses.create(params[:course])
     @course = Course.new(params[:course])
     # @progress3 = Course.where("user_id = ?", current_user.id).sum(:credit) / 120.0
-    @progress = current_user.courses.sum(:credit) / 80.0
+    @totalRequirements = 2
+    @progressRequirement = Requirement.select(:min).where(:distro => "General", :id => Statute.select(:requirement_id).where(:license_id => current_user.license_id)).sum(:min)
+    @progress = current_user.courses.sum(:credit) / @progressRequirement.to_f
     # @org = current_user.license.requirements.attribute
-
     if current_user.license != nil then @sub_req = current_user.license.requirements
     @requirement_distros = current_user.license.requirements.select(:distro) 
     @sub_req.each do |s|
