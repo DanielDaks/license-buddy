@@ -209,6 +209,12 @@ background-repeat: repeat;}*/
 #login-page{
     margin-top: 10%;
 }
+#formlink{
+    font-size: 13px;
+    margin-top: 4px;
+/*    margin-bottom: 3px;*/
+    font-style: italic;
+}
 /*#hello{
     padding-left: 100px;
     padding-top: 150px;
