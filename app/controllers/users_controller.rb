@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @progressRequirement = Requirement.select(:min).where(:distro => "General", :id => Statute.select(:requirement_id).where(:license_id => current_user.license_id)).sum(:min)
     @progress = current_user.courses.sum(:credit) / @progressRequirement.to_f
     # @org = current_user.license.requirements.attribute
-    if current_user.license != nil then @sub_req = current_user.license.requirements
+    if current_user.license != nil then @sub_req = current_user.license.requirements.where('distro != ?', "General")
     @requirement_distros = current_user.license.requirements.select(:distro) 
     @sub_req.each do |s|
     @sub_progress = current_user.courses
